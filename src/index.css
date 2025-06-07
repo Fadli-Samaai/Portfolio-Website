@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+@theme {
+  --color-border: var(--border);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  
+  --color-card: var(--card);
+
+  --animate-float: float 6s ease-in-out infinate;
+  --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinate;
+  --animate-fade-in: fade-in 0.7s ease-out forwards;
+  --animate-fade-in-delay-1: fade-in 0.7s ease-out 0.2 forwards;
+  --animate-fade-in-delay-2: fade-in 0.7s ease-out 0.4 forwards;
+  --animate-fade-in-delay-3: fade-in 0.7s ease-out 0.6 forwards;
+  --animate-fade-in-delay-4: fade-in 0.7s ease-out 0.8 forwards;
+
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes pulse-sublte {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.8;
+    }
+  }
+
+    @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@layer base{
+  :root {
+    --background: rgba(249, 250, 251, 1);
+    --foreground: rgba(28, 35, 56, 1);
+
+    --card: rgba(255, 255, 255, 1);
+
+    --primary: rgba(20, 184, 166, 1);
+    --primary-foreground: rgba(249, 250, 251, 1);
+
+    --border: rgba(229, 231, 235, 1);
+
+    --p-background: rgba(255, 255, 255, 0.8);
+    --p-border: rgba(255, 255, 255, 0.3);
+  }
+
+  .dark {
+    --background: rgba(0, 0, 0, 1);
+    --foreground: rgba(226, 232, 240, 1);
+
+    --card: rgba(20, 23, 35, 1);
+
+    --primary: rgba(45, 212, 191, 1);
+    --primary-foreground: rgba(226, 232, 240, 1);
+
+    --border: rgba(51, 65, 85, 1);
+
+    --p-background: transparent;
+    --p-border: transparent;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground transition-colors duration-300;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+p {
+  background-color: var(--p-background);
+  border: 1px solid var(--p-border);
+  padding: 1.5rem; /* increased padding */
+  border-radius: 0.75rem; /* rounded corners */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+}
+
+  @utility container {
+    margin-inline: auto;
+    padding-inline: 2rem;
+
+    @media (width >= 640px) {
+      max-width: 640px;
+    }
+
+    @media (width >= 768px) {
+      max-width: 768px;
+    }
+
+    @media (width >= 1024px) {
+      max-width: 1024px;
+    }
+
+    @media (width >= 1400px) {
+      max-width: 1400px;
+    }
+  }
+
+  @utility text-glow {
+    @apply relative;
+    text-shadow: 0 0 10pc rgba(167, 139 250, 0.5);
+  }
+
+  @utility card-hover {
+    @apply transition-transform duration-300 hover:scale-[1.02] hover:shadow-lg;
+  }
+
+  @utility gradient-border {
+    @apply relative rounded-md;
+    background: linear-gradient(to right,hsl(var(--card)),hsl(var(--card)));
+    background-clip: padding-box;
+    border: 1px solid transparent
+  }
+
+  @utility language {
+    @apply absolute rounded-full bg-transparent;
+  }
+
+  @utility main-button {
+    @apply px-6 py-2 rounded-full bg-primary text-primary-foreground font-medium
+            transition-all duration-300 hover:shadow-[0_0_10px_rgba(139,92,246,0.5)]
+            hover:scale-105 active:scale-95
+  }
+
+  #root {
+    max-width: 100%;
+    Margin: 0 auto;
+    padding: 0;
+    text-align: center;
+  }
