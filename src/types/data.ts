@@ -9,7 +9,7 @@ export interface ProjectWithSkills {
     demoUrl: string
     githubUrl: string
     tags: string[]
-    }
+}
 
 export const fetchProjects = async (): Promise<ProjectWithSkills[]> => {
     const { data: projects, error: projectError } = await supabase
@@ -48,3 +48,47 @@ export const fetchProjects = async (): Promise<ProjectWithSkills[]> => {
         .map(ps => skillMap.get(ps.skill_id) || 'Unknown')
     }))
 }
+
+export interface Skill {
+    name: string;
+    category: string;
+}
+
+export const fetchSkills = async (): Promise<Skill[]> => {
+    const { data: skills, error } = await supabase
+        .from('skills')
+        .select('name, category');
+
+    if (error) {
+        console.error('Error fetching skills:', error);
+        return [];
+    }
+
+    return skills.map(skill => ({
+        name: skill.name,
+        category: skill.category ?? 'uncategorized',
+    }));
+};
+
+
+export const fetchSkillCategories = async (): Promise<string[]> => {
+    const { data, error } = await supabase
+        .from('skills')
+        .select('category')
+        .neq('category', null); // filter out nulls if you want
+
+    if (error) {
+        console.error('Error fetching skill categories:', error);
+        return [];
+    }
+
+    // Extract unique categories
+    const categoriesSet = new Set<string>();
+    data.forEach(skill => {
+        if (skill.category) {
+            categoriesSet.add(skill.category);
+        }
+    });
+
+    return Array.from(categoriesSet).sort(); // optional: sort alphabetically
+};
