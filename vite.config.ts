@@ -5,7 +5,9 @@ import path from "path"
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "https://github.com/Fadli-Samaai/Portfolio-Website",
+  base: process.env.NODE_ENV === 'production'
+    ? '/Portfolio-Website/'
+    : '/',
   plugins: [react(), tailwindcss()],
   resolve: {
     alias: {
