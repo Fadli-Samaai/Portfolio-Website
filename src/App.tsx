@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { HashRouter, Route, Routes } from "react-router-dom";
 import { Home } from "./pages/Home";
 import { NotFound } from "./pages/404";
 import { AboutSection } from "./components/AboutSection";
@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <ErrorBoundary>
-        <BrowserRouter basename="/Portfolio-Website">
+        <HashRouter basename="/Portfolio-Website">
           <Routes>
             <Route index element={<Home />}/>
             <Route index element={<AboutSection />}/>
@@ -22,7 +22,7 @@ function App() {
             <Route index element={<ContactSection />}/>
             <Route path="*" element={<NotFound />}/>
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       </ErrorBoundary>
     </>
   )
