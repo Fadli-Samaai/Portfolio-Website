@@ -9,6 +9,7 @@
   --color-primary-foreground: var(--primary-foreground);
   
   --color-card: var(--card);
+  --color-card-alt: var(--card-alt);
 
   --animate-float: float 6s ease-in-out infinate;
   --animate-pulse-subtle: pulse-subtle 4s ease-in-out infinate;
@@ -57,6 +58,7 @@
     --foreground: rgba(28, 35, 56, 1);
 
     --card: rgba(255, 255, 255, 1);
+    --card-alt: rgb(192, 192, 192);
 
     --primary: rgba(20, 184, 166, 1);
     --primary-foreground: rgba(249, 250, 251, 1);
@@ -72,6 +74,7 @@
     --foreground: rgba(226, 232, 240, 1);
 
     --card: rgba(20, 23, 35, 1);
+    --card-alt: rgb(20, 32, 35);
 
     --primary: rgba(45, 212, 191, 1);
     --primary-foreground: rgba(226, 232, 240, 1);
@@ -94,14 +97,6 @@
     @apply bg-background text-foreground transition-colors duration-300;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
-
-/* p {
-  background-color: var(--p-background);
-  border: 1px solid var(--p-border);
-  padding: 1.5rem; 
-  border-radius: 0.75rem; 
-  transition: background-color 0.3s ease, border-color 0.3s ease;
-} */
 
   .seperate-background {
     background-color: var(--p-background);

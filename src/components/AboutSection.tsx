@@ -74,7 +74,7 @@ export const AboutSection = () => {
                                 </div>
                             </div>
                         </div>
-                                                <div className="gradient-border p-6 card-hover">
+                        <div className="gradient-border p-6 card-hover">
                             <div className="flex item-start gap-4">
                                 <div>
                                     <div className="p-3 rounded-full bg-primary/10">

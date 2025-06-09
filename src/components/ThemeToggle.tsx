@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { cn } from "../lib/utils";
 
 interface ThemeToggleProps {
-    // Add a prop to determine if it's in mobile menu
     inMobileMenu?: boolean;
 }
 
@@ -39,8 +38,8 @@ export const ThemeToggle = ({ inMobileMenu = false }: ThemeToggleProps) => {
             className={cn(
                 "p-2 rounded-full transition-colors duration-300 focus:outline-none",
                 inMobileMenu 
-                    ? "relative" // No fixed positioning in mobile menu
-                    : "fixed top-5 right-5 z-50" // Fixed positioning for desktop
+                    ? "relative"
+                    : "fixed top-5 right-5 z-50"
             )}
         >
             {isDarkMode ? (

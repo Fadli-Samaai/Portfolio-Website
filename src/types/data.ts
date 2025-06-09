@@ -75,7 +75,7 @@ export const fetchSkillCategories = async (): Promise<string[]> => {
     const { data, error } = await supabase
         .from('skills')
         .select('category')
-        .neq('category', null); // filter out nulls if you want
+        .neq('category', null); 
 
     if (error) {
         console.error('Error fetching skill categories:', error);
@@ -90,5 +90,5 @@ export const fetchSkillCategories = async (): Promise<string[]> => {
         }
     });
 
-    return Array.from(categoriesSet).sort(); // optional: sort alphabetically
+    return Array.from(categoriesSet).sort();
 };

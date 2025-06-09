@@ -50,7 +50,7 @@ export const SkillSection = () => {
                         return (
                             <div
                                 key={key}
-                                className="bg-card p-6 rounded-lg shadow-xs card-hover"
+                                className="bg-card-alt p-6 rounded-lg shadow-xs card-hover"
                             >
                                 <div>
                                     <h3>{skill.name}</h3>
