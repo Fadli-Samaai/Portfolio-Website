@@ -1,4 +1,4 @@
-import { Briefcase, Code, User } from "lucide-react";
+import { Briefcase, Cloud, Code, Computer, Rocket, SpaceIcon, User } from "lucide-react";
 import { cn } from "../lib/utils";
 
 export const AboutSection = () => {
@@ -15,10 +15,17 @@ export const AboutSection = () => {
                         <h3 className="text-2xl font-semibold">Passionate Software Developer</h3>
                         
                         <p className="text-muted-foreground">
-                            random text 
+                            I enjoy building things that make life easier — whether it’s improving a user interface,
+                            streamlining a deployment process, or helping a team move faster. 
+                            Over the last year, I’ve worked across multiple parts of the tech stack, 
+                            giving me a strong appreciation for how different pieces of a system fit together.
                         </p>
                         <p className="text-muted-foreground">
-                            random text 
+                            My background includes time spent in <strong className="text-primary">QA</strong>, <strong className="text-primary">DevOps</strong>, <strong className="text-primary">Data</strong>, and <strong className="text-primary">Software Development</strong> — 
+                            experiences that have helped me think critically about <strong className="text-primary">quality</strong>, <strong className="text-primary">scalability</strong>, and <strong className="text-primary">performance</strong> from day one of a project.
+                            I’m comfortable working with a variety of technologies — 
+                            from <strong className="text-primary">React</strong> and <strong className="text-primary">C#</strong> to <strong className="text-primary">Docker</strong>, <strong className="text-primary">AWS</strong>, and <strong className="text-primary">Terraform</strong> — 
+                            and always eager to explore new tools and frameworks that can solve real problems. 
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
@@ -38,13 +45,16 @@ export const AboutSection = () => {
                             <div className="flex item-start gap-4">
                                 <div>
                                     <div className="p-3 rounded-full bg-primary/10">
-                                        <Code className="h-6 w-6 text-primary"/>
+                                        <Computer className="h-6 w-6 text-primary"/>
                                     </div>
                                 </div>
                                 <div className="text-left">
-                                    <h4 className="font-semibold text-lg">Software Engineer</h4>
+                                    <h4 className="font-semibold text-lg">Full Stack Development</h4>
                                     <p className="text-muted-foreground">
-                                        building the futre
+                                        Building and maintaining scalable, 
+                                        responsive web applications using <strong>React</strong>, 
+                                        <strong> ASP.Net Web API</strong>, <strong> SQL</strong>, 
+                                        and <strong> various databases</strong>
                                     </p>
                                 </div>
                             </div>
@@ -57,9 +67,9 @@ export const AboutSection = () => {
                                     </div>
                                 </div>
                                 <div className="text-left">
-                                    <h4 className="font-semibold text-lg">Software Engineer</h4>
+                                    <h4 className="font-semibold text-lg">Project Collaboration & Agile Delivery</h4>
                                     <p className="text-muted-foreground">
-                                        building the futre
+                                        Experienced in cross-functional collaboration and working in Agile teams to deliver high-quality software on time.
                                     </p>
                                 </div>
                             </div>
@@ -68,13 +78,13 @@ export const AboutSection = () => {
                             <div className="flex item-start gap-4">
                                 <div>
                                     <div className="p-3 rounded-full bg-primary/10">
-                                        <Briefcase className="h-6 w-6 text-primary"/>
+                                        <Rocket className="h-6 w-6 text-primary"/>
                                     </div>
                                 </div>
                                 <div className="text-left">
-                                    <h4 className="font-semibold text-lg">Software Engineer</h4>
+                                    <h4 className="font-semibold text-lg">DevOps & Cloud Engineering</h4>
                                     <p className="text-muted-foreground">
-                                        building the futre
+                                        Working with AWS, Docker, Terraform, and TeamCity to streamline CI/CD pipelines and ensure seamless deployments.
                                     </p>
                                 </div>
                             </div>

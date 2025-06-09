@@ -38,7 +38,7 @@ export const HeroSection = () => {
             >
                 <a href="#About">
                     <span>Scroll</span>
-                    <ArrowDown className="h7.5 w-7.5 text-primary" />
+                    <ArrowDown className="h-7.5 w-7.5 text-primary pl-7" />
                 </a>
             </div>
         </section>

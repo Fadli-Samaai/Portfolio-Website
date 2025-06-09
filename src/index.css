@@ -78,8 +78,8 @@
 
     --border: rgba(51, 65, 85, 1);
 
-    --p-background: transparent;
-    --p-border: transparent;
+    --p-background: rgba(20, 23, 35, 1);
+    --p-border: rgba(51, 65, 85, 1);
   }
 
   * {
