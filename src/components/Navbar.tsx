@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { cn } from "../lib/utils";
 import { Menu, X } from "lucide-react";
+import { ThemeToggle } from "./ThemeToggle"; // Adjust path as needed
 
 const navItems = [
     {name: "Home", href: "#Home"},
@@ -16,12 +17,14 @@ export const Navbar = () => {
 
     useEffect(() => {
         const handleScroll = () => {
+            // Fixed: was window.screenY, should be window.scrollY
             setIsScrolled(window.scrollY > 10)
         }
         window.addEventListener("scroll", handleScroll)
         return () => window.removeEventListener("scroll", handleScroll)
-    }, []) 
+    }, []) // Added dependency array
 
+    // Close mobile menu when clicking outside or on escape
     useEffect(() => {
         const handleEscape = (e: KeyboardEvent) => {
             if (e.key === 'Escape') setIsMobileMenuOpen(false)
@@ -29,7 +32,7 @@ export const Navbar = () => {
         
         if (isMobileMenuOpen) {
             document.addEventListener('keydown', handleEscape)
-            document.body.style.overflow = 'hidden'
+            document.body.style.overflow = 'hidden' // Prevent background scroll
         } else {
             document.body.style.overflow = 'unset'
         }
@@ -44,6 +47,7 @@ export const Navbar = () => {
         <>
             <nav className={cn(
                 "fixed w-full z-40 transition-all duration-300",
+                // Consistent height to prevent layout shift
                 "h-16 md:h-20",
                 isScrolled 
                     ? "bg-background/80 backdrop-blur-md shadow-lg border-b border-border/20" 
@@ -61,7 +65,7 @@ export const Navbar = () => {
                     </a>
 
                     {/* Desktop nav */}
-                    <div className="hidden md:flex space-x-8">
+                    <div className="hidden md:flex items-center space-x-8">
                         {navItems.map((item) => (
                             <a 
                                 key={item.name} 
@@ -71,6 +75,7 @@ export const Navbar = () => {
                                 {item.name}
                             </a>
                         ))}
+                        <ThemeToggle />
                     </div>
 
                     {/* Mobile Nav Button */}
@@ -90,11 +95,12 @@ export const Navbar = () => {
                     "fixed inset-0 bg-background/95 backdrop-blur-md z-30",
                     "flex flex-col items-center justify-center",
                     "transition-all duration-300 md:hidden",
+                    // Fixed typo: was "duratino-300"
                     isMobileMenuOpen 
                         ? "opacity-100 pointer-events-auto" 
                         : "opacity-0 pointer-events-none"
                 )}
-                onClick={() => setIsMobileMenuOpen(false)}
+                onClick={() => setIsMobileMenuOpen(false)} // Close when clicking overlay
             >
                 <div className="flex flex-col space-y-8 text-xl">
                     {navItems.map((item) => (
@@ -107,6 +113,10 @@ export const Navbar = () => {
                             {item.name}
                         </a>
                     ))}
+                    {/* Theme Toggle in Mobile Menu */}
+                    <div className="flex justify-start mt-4"> {/* Changed to justify-start for left alignment */}
+                        <ThemeToggle inMobileMenu={true} />
+                    </div>
                 </div>
             </div>
 

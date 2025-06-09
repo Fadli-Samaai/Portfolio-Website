@@ -2,8 +2,14 @@ import { Moon, Sun } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "../lib/utils";
 
-export const ThemeToggle = () => {
+interface ThemeToggleProps {
+    // Add a prop to determine if it's in mobile menu
+    inMobileMenu?: boolean;
+}
+
+export const ThemeToggle = ({ inMobileMenu = false }: ThemeToggleProps) => {
     const [isDarkMode, setIsDarkMode] = useState(false);
+    
     const toggleTheme = () => {
         if (isDarkMode) {
             document.documentElement.classList.remove("dark")
@@ -28,10 +34,15 @@ export const ThemeToggle = () => {
     },[])
 
     return (
-        <button onClick={toggleTheme} className={cn("fixed max-sm:hidden top-5 right-5 p-2 rounded-full transition-color duration-300 z-50",
-            "focus:outline-hidden"
-        )}>
-            {" "}
+        <button 
+            onClick={toggleTheme} 
+            className={cn(
+                "p-2 rounded-full transition-colors duration-300 focus:outline-none",
+                inMobileMenu 
+                    ? "relative" // No fixed positioning in mobile menu
+                    : "fixed top-5 right-5 z-50" // Fixed positioning for desktop
+            )}
+        >
             {isDarkMode ? (
                 <Sun className="h-6 w-6 text-yellow-300"/>
             ) : (
