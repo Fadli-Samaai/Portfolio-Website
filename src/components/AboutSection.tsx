@@ -1,4 +1,4 @@
-import { Briefcase, Cloud, Code, Computer, Rocket, SpaceIcon, User } from "lucide-react";
+import { Computer, Rocket, User } from "lucide-react";
 import { cn } from "../lib/utils";
 
 export const AboutSection = () => {
