@@ -28,6 +28,10 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
+      # Clear dist folder
+      - name: Clear dist folder
+        run: rm -rf dist
+
       # Build the app
       - name: Build
         run: npm run build
