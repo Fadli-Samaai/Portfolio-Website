@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <ErrorBoundary>
-        <BrowserRouter>
+        <BrowserRouter basename="/Portfolio-Website">
           <Routes>
             <Route index element={<Home />}/>
             <Route index element={<AboutSection />}/>
