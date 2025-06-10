@@ -23,8 +23,8 @@ export const CodeLanguageBackground = () => {
     const codeTexts = useMemo(() => [
         "JavaScript", "Python", "React", "TypeScript", "HTML", "CSS", 
         "Node.js", "Vue", "Angular", "Java", "C++", "Go", "Rust", 
-        "PHP", "Ruby", "Swift", "Kotlin", "C#", "SQL", "MongoDB",
-        "Git", "Docker", "AWS", "API", "JSON", "XML", "REST", "GraphQL"
+        "PHP", "Redux", "Swift", "Postgres", "C#", "SQL", "MongoDB",
+        "Git", "Docker", "AWS", "API", "JSON", "Vite", "REST", "GraphQL"
     ], []);
 
     const colors = useMemo(() => [

@@ -15,17 +15,17 @@ export const AboutSection = () => {
                         <h3 className="text-2xl font-semibold">Passionate Software Developer</h3>
                         
                         <p className="text-muted-foreground">
-                            I enjoy building things that make life easier — whether it’s improving a user interface,
+                            I enjoy building things that make life easier, whether it’s improving a user interface,
                             streamlining a deployment process, or helping a team move faster. 
                             Over the last year, I’ve worked across multiple parts of the tech stack, 
                             giving me a strong appreciation for how different pieces of a system fit together.
                         </p>
                         <p className="text-muted-foreground">
-                            My background includes time spent in <strong className="text-primary">QA</strong>, <strong className="text-primary">DevOps</strong>, <strong className="text-primary">Data</strong>, and <strong className="text-primary">Software Development</strong> — 
+                            My background includes time spent in <strong className="text-primary">QA</strong>, <strong className="text-primary">DevOps</strong>, <strong className="text-primary">Data</strong>, and <strong className="text-primary">Software Development</strong>,
                             experiences that have helped me think critically about <strong className="text-primary">quality</strong>, <strong className="text-primary">scalability</strong>, and <strong className="text-primary">performance</strong> from day one of a project.
-                            I’m comfortable working with a variety of technologies — 
-                            from <strong className="text-primary">React</strong> and <strong className="text-primary">C#</strong> to <strong className="text-primary">Docker</strong>, <strong className="text-primary">AWS</strong>, and <strong className="text-primary">Terraform</strong> — 
-                            and always eager to explore new tools and frameworks that can solve real problems. 
+                            I’m comfortable working with a variety of technologies 
+                            from <strong className="text-primary">React</strong> and <strong className="text-primary">C#</strong> to <strong className="text-primary">Docker</strong>, <strong className="text-primary">AWS</strong>, and <strong className="text-primary">Terraform</strong>. I 
+                            am always eager to explore new tools and frameworks that can solve real problems. 
                         </p>
 
                         <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
@@ -33,8 +33,13 @@ export const AboutSection = () => {
                                 {" "}
                                 Get In Touch
                             </a>
-                            <a href="" className={cn("px-6 py-2 rounded-full border border-primary text-primary",
-                                    "hover:bg-primary/10 transition-colors duration-300")}
+                            <a 
+                                href="process.env.CV_DOWNLOAD_URL" 
+                                download="Fadli_Samaai_CV.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className={cn("px-6 py-2 rounded-full border border-primary text-primary",
+                                            "hover:bg-primary/10 transition-colors duration-300")}
                             >
                                 Download CV
                             </a>

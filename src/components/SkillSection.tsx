@@ -27,37 +27,41 @@ export const SkillSection = () => {
                 </h2>
 
                 <div className="flex flex-wrap justify-center gap-4 mb-12">
-                    {categories.map((category, key) => {
-                        return (
-                            <button
-                                key={key}
-                                onClick={() => setActiveCategory(category)}
-                                className={cn(
-                                    "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
-                                    activeCategory === category
-                                        ? "bg-primary text-primary-foreground"
-                                        : "bg-secondary/70 text-foreground hover:bd-secondary"
-                                )}
-                            >
-                                {category}
-                            </button>
-                        );
-                    })}
+                    {categories
+                        .filter(category => category !== 'build tool')
+                        .map((category, key) => {
+                            return (
+                                <button
+                                    key={key}
+                                    onClick={() => setActiveCategory(category)}
+                                    className={cn(
+                                        "px-5 py-2 rounded-full transition-colors duration-300 capitalize",
+                                        activeCategory === category
+                                            ? "bg-primary text-primary-foreground"
+                                            : "bg-secondary/70 text-foreground hover:bd-secondary"
+                                    )}
+                                >
+                                    {category}
+                                </button>
+                            );
+                        })}
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    {filteredSkills.map((skill: Skill, key) => {
-                        return (
-                            <div
-                                key={key}
-                                className="bg-card-alt p-6 rounded-lg shadow-xs card-hover"
-                            >
-                                <div>
-                                    <h3>{skill.name}</h3>
+                    {filteredSkills
+                        .filter(skill => skill.category !== 'build tool')
+                        .map((skill, key) => {
+                            return (
+                                <div
+                                    key={key}
+                                    className="bg-card-alt p-6 rounded-lg shadow-xs card-hover"
+                                >
+                                    <div>
+                                        <h3>{skill.name}</h3>
+                                    </div>
                                 </div>
-                            </div>
-                        );
-                    })}
+                            );
+                        })}
                 </div>
             </div>
         </section>

@@ -5,6 +5,7 @@ import { useState } from "react"
 
 export const ContactSection = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
+    const disabledForm = true;
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -27,7 +28,7 @@ export const ContactSection = () => {
                     </p>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div className={`grid grid-cols-1 ${disabledForm ? 'gird grid-cols-1' : 'md:grid-cols-2'} gap-12`}>
                     <div className="space-y-8">
                         <h3 className="text-2xl font-semibold mb-6 seperate-background">
                             Contact Information
@@ -68,63 +69,67 @@ export const ContactSection = () => {
                         </div>
                         </div>
                     </div>
+                    {!disabledForm ? (
                     <div className="bg-card p-8 rounded-lg shadow-xs">
-                        <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
-                        <form onSubmit={handleSubmit} className="space-y-6">
-                            <div>
-                                <label 
-                                    htmlFor="Name"
-                                    className="block text-sm font-medium mb-2"
-                                >Your Name</label>
-                                <input 
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    required
-                                    className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
-                                    placeholder="Your Name..."
-                                />
-                            </div>
-                            <div>
-                                <label 
-                                    htmlFor="Email"
-                                    className="block text-sm font-medium mb-2"
-                                >Your Email</label>
-                                <input 
-                                    type="text"
-                                    id="email"
-                                    name="email"
-                                    required
-                                    className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
-                                    placeholder="YourEmail@gmail.com"
-                                />
-                            </div>
-                            <div>
-                                <label 
-                                    htmlFor="Message"
-                                    className="block text-sm font-medium mb-2"
-                                >Your Message</label>
-                                <textarea 
-                                    id="message"
-                                    name="message"
-                                    required
-                                    className="w-full px-4 py-6 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none"
-                                    placeholder="Hello, I'd like to talk about..."
-                                />
-                            </div>
-                            <div className="flex justify-center">
-                                <button 
-                                    type="submit" 
-                                    disabled = {isSubmitting}
-                                    className={cn(
-                                        "main-button flex items-center justify-center gap-2"
-                                    )}>
-                                    {isSubmitting ? "Sending..." : "Send Message"}
-                                    <Send size={16}/>
-                                </button>
-                            </div>
-                        </form>
+                            <>
+                                <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
+                                <form onSubmit={handleSubmit} className="space-y-6">
+                                    <div>
+                                        <label 
+                                            htmlFor="Name"
+                                            className="block text-sm font-medium mb-2"
+                                        >Your Name</label>
+                                        <input 
+                                            type="text"
+                                            id="name"
+                                            name="name"
+                                            required
+                                            className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
+                                            placeholder="Your Name..."
+                                        />
+                                    </div>
+                                    <div>
+                                        <label 
+                                            htmlFor="Email"
+                                            className="block text-sm font-medium mb-2"
+                                        >Your Email</label>
+                                        <input 
+                                            type="text"
+                                            id="email"
+                                            name="email"
+                                            required
+                                            className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary"
+                                            placeholder="YourEmail@gmail.com"
+                                        />
+                                    </div>
+                                    <div>
+                                        <label 
+                                            htmlFor="Message"
+                                            className="block text-sm font-medium mb-2"
+                                        >Your Message</label>
+                                        <textarea 
+                                            id="message"
+                                            name="message"
+                                            required
+                                            className="w-full px-4 py-6 rounded-md border border-input bg-background focus:outline-hidden focus:ring-2 focus:ring-primary resize-none"
+                                            placeholder="Hello, I'd like to talk about..."
+                                        />
+                                    </div>
+                                    <div className="flex justify-center">
+                                        <button 
+                                            type="submit" 
+                                            disabled = {isSubmitting}
+                                            className={cn(
+                                                "main-button flex items-center justify-center gap-2"
+                                            )}>
+                                            {isSubmitting ? "Sending..." : "Send Message"}
+                                            <Send size={16}/>
+                                        </button>
+                                    </div>
+                                </form>
+                            </>
                     </div>
+                    ) : null}
                 </div>
             </div>
         </section>
