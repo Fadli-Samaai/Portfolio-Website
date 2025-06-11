@@ -2,6 +2,9 @@ import { Computer, Rocket, User } from "lucide-react";
 import { cn } from "../lib/utils";
 
 export const AboutSection = () => {
+    
+    const disabledForm = true;
+
     return( 
         <section id="About" className="py-24 px-4 relative">
             <div className="container mx-auto max-w-5xl seperate-background">
@@ -27,22 +30,23 @@ export const AboutSection = () => {
                             from <strong className="text-primary">React</strong> and <strong className="text-primary">C#</strong> to <strong className="text-primary">Docker</strong>, <strong className="text-primary">AWS</strong>, and <strong className="text-primary">Terraform</strong>. I 
                             am always eager to explore new tools and frameworks that can solve real problems. 
                         </p>
-
                         <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center">
                             <a href="#Contact" className="main-button">
                                 {" "}
                                 Get In Touch
                             </a>
-                            <a 
-                                href="/api/download-cv"
-                                download="Fadli_Samaai_CV.pdf"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className={cn("px-6 py-2 rounded-full border border-primary text-primary",
-                                            "hover:bg-primary/10 transition-colors duration-300")}
-                            >
-                                Download CV
-                            </a>
+                            {!disabledForm ? (
+                                <a 
+                                    href="/api/download-cv"
+                                    download="Fadli_Samaai_CV.pdf"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className={cn("px-6 py-2 rounded-full border border-primary text-primary",
+                                                "hover:bg-primary/10 transition-colors duration-300")}
+                                >
+                                    Download CV
+                                </a>
+                            ) : null}
                         </div>
                     </div>
                     <div className="grid grid-cols-1 gap-6">
