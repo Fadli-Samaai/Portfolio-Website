@@ -3,7 +3,7 @@ import { cn } from "../lib/utils";
 
 export const AboutSection = () => {
     
-    const disabledForm = true;
+    const disabledButton = true;
 
     return( 
         <section id="About" className="py-24 px-4 relative">
@@ -35,7 +35,7 @@ export const AboutSection = () => {
                                 {" "}
                                 Get In Touch
                             </a>
-                            {!disabledForm ? (
+                            {!disabledButton ? (
                                 <a 
                                     href="/api/download-cv"
                                     download="Fadli_Samaai_CV.pdf"

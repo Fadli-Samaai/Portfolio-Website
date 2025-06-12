@@ -22,9 +22,9 @@ export const HeroSection = () => {
                         </h1>
                         
                         <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-4 text-hard-background">
-                            I’m a full-stack software engineer with hands-on experience across QA, DevOps, Data, and Software Development, giving me a holistic understanding of business-critical systems.
-                            I specialize in front-end development with React, API integrations, and building robust deployment pipelines, with a passion for innovation and solving complex problems. 
-                            I thrive on continuous learning and collaboration, always driving impact and success in the projects I take on.
+                            I’m a full-stack software engineer with hands-on experience across QA, DevOps, Data, and Software Development, giving me a holistic understanding of business-critical systems. 
+                            I specialize in building end-to-end solutions, from developing responsive user interfaces with technologies like React to architecting scalable back-end services and APIs. 
+                            I thrive on continuous learning and collaboration, always driving impact and success in the projects I take on
                         </p>
                     </div>
                     <div className="pt-4 opacity-0 animate-fade-in-delay-4">
