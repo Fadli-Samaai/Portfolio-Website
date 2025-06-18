@@ -13,12 +13,43 @@ export const CvComponent = () => {
                                 <span className="text-sm text-muted-foreground">Jan 2025 - May 2025</span>
                             </div>
                             <p className="font-medium text-primary">Ozow PTY LTD - Junior Software Engineer</p>
-                            <ul className="text-sm text-muted-foreground space-y-2">
-                                <li>• Architected and optimized <strong>React-based front-end applications</strong> serving thousands of daily users</li>
-                                <li>• Developed and maintained <strong>RESTful APIs</strong> supporting high-volume payment processing</li>
-                                <li>• Contributed to revenue-generating PayIn platform with <strong>99.9% uptime</strong></li>
-                                <li>• Implemented <strong>CI/CD pipelines</strong> reducing deployment time by 60%</li>
-                            </ul>
+                            <div className="space-y-4">
+                                <div>
+                                    <h6 className="font-medium text-m mb-2">Frontend Development & UI/UX:</h6>
+                                    <ul className="text-sm text-muted-foreground space-y-1 ml-4">
+                                        <li>• Architected and optimized <strong>React-based front-end applications</strong> serving thousands of daily users</li>
+                                        <li>• Created <strong>animated UI components</strong> by transforming static SVGs into dynamic loaders, improving user experience</li>
+                                        <li>• Implemented <strong>iframe security solutions</strong> for payment forms, managing biometric authentication and CORS policies</li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h6 className="font-medium text-m mb-2">Backend & API Development:</h6>
+                                    <ul className="text-sm text-muted-foreground space-y-1 ml-4">
+                                        <li>• Contributed to revenue-generating platform with <strong>99.9% uptime</strong></li>
+                                        <li>• Developed and maintained <strong>RESTful APIs</strong> supporting high-volume payment processing</li>
+                                        <li>• Lead <strong>error sessions</strong> using <strong>datadog</strong> to identify errors and delegate tasks</li>
+                                        <li>• Wrote comprehensive <strong>unit tests</strong> for both positive and negative cases, improving test coverage.</li>
+                                        <li>• Architected <strong>microservices migration</strong> from monolithic architecture, improving team dependency and system scalability</li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h6 className="font-medium text-m mb-2">Data Integration & Messaging:</h6>
+                                    <ul className="text-sm text-muted-foreground space-y-1 ml-4">
+                                        <li>• Implemented <strong>Apache Kafka topics</strong> for event-driven architecture</li>
+                                        <li>• Built <strong>data consumer services</strong> to process and integrate streaming data across multiple systems</li>
+                                    </ul>
+                                </div>
+
+                                <div>
+                                    <h6 className="font-medium text-m mb-2">DevOps & Deployment:</h6>
+                                    <ul className="text-sm text-muted-foreground space-y-1 ml-4">
+                                        <li>• Assisted with <strong>deployments</strong> as build master</li>
+                                        <li>• Managed <strong>cross-origin security configurations</strong> for embedded payment solutions</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -34,6 +65,7 @@ export const CvComponent = () => {
                                 <li>• Implemented <strong>automated testing frameworks</strong> improving code coverage</li>
                                 <li>• Optimized <strong>cloud infrastructure</strong> using AWS and Terraform</li>
                                 <li>• Enhanced system reliability through <strong>production bug resolution</strong> and performance monitoring</li>
+                                <li>• Implemented <strong>CI/CD pipelines</strong> for a console app I created</li>
                             </ul>
                         </div>
                     </div>
